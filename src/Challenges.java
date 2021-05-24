@@ -1,16 +1,35 @@
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Challenges {
-    /** Create a function which returns the number of true values there are in an array.*/
+    /** Create a function which returns the number of true values there are in an array.
+     */
     public static int countTrueFalse(boolean[] arr) {
-        // write your code here
+      int count = 0;
+      
+      for (boolean each : arr){
+          if (each) count++;
+      }
         // you will need to change the return statement
-        return Integer.parseInt(null);
-    }
+        return count;
+        /*
+        first have our array of true and false.
+        then count the true only in the array and hold it in memory
+        return as int
+         */
+     }
 
     /** Create a function that takes an array and returns the absolute difference between the biggest and smallest numbers.*/
-    public static int differenceMinMax(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+    public static int differenceMinMax1(int[] nums){
+        Arrays.sort(nums);
+        
+        int min = nums[0];
+        int max = nums[nums.length - 1];
+        
+       return Math.abs(min - max);
+        /* Find the Smallest Number in the Array and hold the value and the same for the Largest Number
+           Caculate the Absolute Differance between the two
+         */
     }
 
     /**
@@ -20,16 +39,20 @@ public class Challenges {
      * and then the word is pronounced with a question mark ?
      */
     public static String stutter(String str){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        String first = str.substring(0 , 2) + "... ";
+        
+        return first + first + str + "?";
     }
 
     /** Write a function that takes an array of numbers and returns the second largest number.*/
     public static int secondLargestNumber(int[] nums){
         // write your code here
+        Arrays.sort(nums);
+        
+        int max = nums[nums.length - 2];
+        
         // you will need to change the return statement
-        return Integer.parseInt(null);
+        return max;
     }
 
     /**
@@ -60,20 +83,36 @@ public class Challenges {
 
     /** The "Reverser"
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
-    public static String reverser(String reverseMe){
+    public static String reverser(String reverseMe) {
         // write your code here
-        // you will need to change the return statement
-        return "";
+        String reverse = new StringBuffer(reverseMe).reverse().toString(); //this reverses the string
+      /*reverseMe.toUpperCase();
+        reverseMe.toLowerCase();
+        StringBuffer cap = new StringBuffer(reverse); */
+     /*
+        for (int i = 0; i < reverse.length(); i++) {
+    
+        if (Character.isLowerCase(reverse.charAt(i))) {
+                cap.setCharAt(i, Character.toUpperCase(reverse.charAt(i)));
+            } else if (Character.isUpperCase(reverse.charAt(i))) {
+                cap.setCharAt(i, Character.toLowerCase(reverse.charAt(i)));
+            }*/ //an idea but not really what i had in mind for now it reverse but sadly isnt swapping case sensetive
+        return reverse;
     }
-
+            // you will need to change the return statement
+        /*
+        find a way to reverse. next try to make the letters match while swapped around.
+         */
     /**
      * Reverse An Array
      * Write a function that reverses the order of an array
      */
     public static int[] reverseArray(int[] arr){
         // write your code here
+     //find a way to reverse the array
+        Collections.reverse(Arrays.asList(arr)); // just an idea makes one test work but i remember seeing this before
         // you will need to change the return statement
-        return new int[0];
+        return arr;
     }
 
     /**
@@ -82,6 +121,7 @@ public class Challenges {
      */
     public static String duckTheBomb(String checkMe){
         // write your code here
+        //i didnt get to this but what im assuming what would be needed is a if else followed for strings
         // you will need to change the return statement
         return "";
     }
@@ -92,6 +132,7 @@ public class Challenges {
      */
     public static int[] sortNumsAscending(int[] nums){
         // write your code here
+        //i didnt get to this but what im assuming what would be needed but like sort array like i did for secondlargest
         // you will need to change the return statement
         return new int[0];
     }
@@ -103,6 +144,7 @@ public class Challenges {
      */
     public static String[] removeDups(String[] str){
         // write your code here
+        //i didnt get to this either but same as counttrue but for arrays
         // you will need to change the return statement
         return new String[0];
     }
