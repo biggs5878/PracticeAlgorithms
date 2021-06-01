@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.
@@ -75,10 +74,23 @@ public class Challenges {
      * Write a program that gets three integers from the user.
      * Count from the first number to the second number in increments of the third number.
      */
-    public static int[] skipCount(int countFrom, int countTo, int countBy){
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+    public static String skipCount(int countFrom, int countTo, int countBy){
+        //Count from first to second number in increments of the third number and if its possible we will have
+        //Try again with better numbers!
+        
+       // Valid User input
+        if (countTo < countFrom) {
+            return "Try again with better numbers!";
+        }
+        StringBuilder answer = new StringBuilder();
+        // Create Pattern based on user input numbers
+        for (int currentInt = countFrom; currentInt <= countTo; currentInt += countBy){
+            answer.append(currentInt).append(".. ");
+        }
+        
+        //return pattern as a string
+        answer.setLength(answer.length() - 3);
+        return answer.toString();
     }
 
     /** The "Reverser"
@@ -86,35 +98,45 @@ public class Challenges {
     public static String reverser(String reverseMe) {
         // write your code here
         String reverse = new StringBuffer(reverseMe).reverse().toString(); //this reverses the string
-      /*reverseMe.toUpperCase();
-        reverseMe.toLowerCase();
-        StringBuffer cap = new StringBuffer(reverse); */
-     /*
-        for (int i = 0; i < reverse.length(); i++) {
     
-        if (Character.isLowerCase(reverse.charAt(i))) {
-                cap.setCharAt(i, Character.toUpperCase(reverse.charAt(i)));
-            } else if (Character.isUpperCase(reverse.charAt(i))) {
-                cap.setCharAt(i, Character.toLowerCase(reverse.charAt(i)));
-            }*/ //an idea but not really what i had in mind for now it reverse but sadly isnt swapping case sensetive
-        return reverse;
-    }
-            // you will need to change the return statement
+        for (int i = 0; i < reverse.length(); i++) {
+        
+            if (Character.isUpperCase((i))) ;
+            {
+                Character.toLowerCase(10);
+            
+                if (Character.isUpperCase((i))) ;
+                {
+                    Character.toLowerCase(5);
+                }
+            
+            }
+        }
+        return reverse.toUpperCase();
+    }// you will need to change the return statement
         /*
         find a way to reverse. next try to make the letters match while swapped around.
          */
-    /**
-     * Reverse An Array
-     * Write a function that reverses the order of an array
-     */
-    public static int[] reverseArray(int[] arr){
-        // write your code here
-     //find a way to reverse the array
-        Collections.reverse(Arrays.asList(arr)); // just an idea makes one test work but i remember seeing this before
-        // you will need to change the return statement
-        return arr;
-    }
-
+        /**
+         * Reverse An Array
+         * Write a function that reverses the order of an array
+         */
+        public static int[] reverseArray ( int[] arr){
+            // write your code here
+            //find a way to reverse the array
+        
+            //
+            for (int array = 0; array < arr.length / 2; array++) {
+                int reverse = arr[array];
+                arr[array] = arr[arr.length - array - 1];
+                arr[arr.length - array - 1] = reverse;
+            }
+        /*
+        Using I for index just for my test i wanted to use reverse keyword but solved!
+         */
+            return arr;
+        }
+    
     /**
      * Write a function that finds the word "bomb" in the given string (not case sensitive).
      * Return "DUCK!" if found, otherwise,"Relax, there's no bomb.".
@@ -132,6 +154,10 @@ public class Challenges {
      */
     public static int[] sortNumsAscending(int[] nums){
         // write your code here
+       /* int Array[] = new int[] ;
+        Arrays.sort(nums);
+        */
+        
         //i didnt get to this but what im assuming what would be needed but like sort array like i did for secondlargest
         // you will need to change the return statement
         return new int[0];
